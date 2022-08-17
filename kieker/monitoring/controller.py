@@ -88,7 +88,7 @@ class WriterController:
             config_parser.read(config)
             if not config_parser.items:
                 raise ValueError('The configuration file is empty or could not be found.')
-            mode = config_parser.get('Main', 'mode', 'text')
+            mode = config_parser.get('Main', 'mode', fallback='text')
             if mode == 'tcp':
                 self.monitoring_writer = TCPWriter(config)
             elif mode == 'text':
