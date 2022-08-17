@@ -75,7 +75,7 @@ class TimeSourceController(AbstractController):
         return self.time_source.get_time()
 
 
-from monitoring.writer import FileWriter, TCPWriter
+from monitoring.writer import FileWriter, TCPWriter, DummyWriter
 
 class WriterController:
     ''' This class is responsible for how the record data is written.
